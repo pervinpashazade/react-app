@@ -1,0 +1,13 @@
+.aside-wrapper {
+    background-color: #fff;
+    /* height: 100%; */
+    position: absolute;
+    /* width: 306px; */
+    width: 100%;
+
+    /* temporary static */
+    height: 100vh;
+    background: #FFFFFF;
+    box-shadow: 10px 3px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 20px 0px 20px 20px;
+}
