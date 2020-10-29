@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './aside.css';
+import '../../assets/css/containers/layout/aside.css';
 
 
 class Aside extends Component {
