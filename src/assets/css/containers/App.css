@@ -1,12 +1,21 @@
+:root{
+  --primary-color: #713BDB;
+  --primary-text-color: #A2A4B9;
+}
+
 body{
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
   background-color: rgba(244, 245, 249, 1);
 }
 
+.app-wrapper{
+  display: flex;
+}
+
 .container-fluid{
   padding: 0px;
-
 }
 
 .container-fluid .row{
