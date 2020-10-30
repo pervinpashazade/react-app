@@ -16,7 +16,6 @@ a:hover {
 
 .btn-outline-custom {
   padding: 8px 24px 8px 18px;
-
   background: #fff;
   border: 1px solid #7843DE;
   box-sizing: border-box;
@@ -30,10 +29,11 @@ a:hover {
   color: #7843DE;
 }
 
-.btn-custom-primary {
-  padding: 9px 24px 9px 18px;
-  font-size: 10px;
+.btn-add {
+  padding: 9px 12px 9px 18px;
+  font-style: normal;
   font-weight: 600;
+  font-size: 10px;
   line-height: 13px;
   letter-spacing: 0em;
   text-align: left;
@@ -41,6 +41,10 @@ a:hover {
   background: #7843DE;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+}
+
+.btn i {
+  margin-left: 20px;
 }
 
 /* .container-fluid{
