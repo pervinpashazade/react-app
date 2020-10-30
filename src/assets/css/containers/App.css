@@ -1,20 +1,49 @@
-:root{
-  --primary-color: #713BDB;
-  --primary-text-color: #A2A4B9;
-}
-
-body{
+body {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
   background-color: rgba(244, 245, 249, 1);
+  height: 100%;
 }
 
-.app-wrapper{
-  display: flex;
+a {
+  text-decoration: none;
 }
 
-.container-fluid{
+a:hover {
+  text-decoration: none;
+}
+
+.btn-outline-custom {
+  padding: 8px 24px 8px 18px;
+
+  background: #fff;
+  border: 1px solid #7843DE;
+  box-sizing: border-box;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 12px;
+  color: #7843DE;
+}
+
+.btn-custom-primary {
+  padding: 9px 24px 9px 18px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 13px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #fff;
+  background: #7843DE;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+/* .container-fluid{
   padding: 0px;
 }
 
@@ -24,4 +53,4 @@ body{
 
 .container-fluid .row [class*="col-"] {
   padding: 0px;
-}
+} */

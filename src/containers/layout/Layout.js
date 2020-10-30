@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import Aside from './Aside.js'
 import '../../assets/img/profile.png';
 
-// import Header from './Header'
+import ContentWrapper from './ContentWrapper.js';
 
 class Layout extends Component {
     render() {
         return (
-            <div>
+            <div className="layout">
                 <Aside />
-                {/* <Header /> */}
+                <ContentWrapper />
             </div>
         )
     }
