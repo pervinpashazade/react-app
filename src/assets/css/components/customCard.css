@@ -1,0 +1,62 @@
+.custom-card {
+    padding: 5px 28px 28px 26px;
+    background-color: #fff;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.06);
+    font-size: 17px;
+    line-height: 23px;
+}
+
+.custom-card .card-header {
+    padding: 0;
+    /* margin-bottom: 48px; */
+    border: none;
+    background-color: transparent;
+}
+
+.custom-card .card-header .total-summary {
+    margin-bottom: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 73px;
+    color: #42474A;
+    word-spacing: -10px;
+}
+
+.custom-card .card-header .card-title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 23px;
+    color: #42474A;
+    margin-bottom: 0;
+}
+
+.custom-card .card-header .total-summary .card-currency {
+    font-size: 35px;
+    line-height: 47px;
+    /* identical to box height */
+    color: #713BDB;
+}
+
+/* card body */
+
+.custom-card .card-body {
+    padding: 0;
+}
+
+.custom-card .card-body .statistic-item {
+    padding-top: 47px;
+}
+
+.custom-card .card-body .statistic-item .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-card .card-body .statistic-item .title span.item-result {
+    font-size: 22px;
+    line-height: 29px;
+    color: #42474A;
+}
