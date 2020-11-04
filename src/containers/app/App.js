@@ -1,4 +1,4 @@
-import '../../assets/css/containers/app.css';
+import '../../assets/css/app.css';
 import Layout from '../layout/Layout';
 
 

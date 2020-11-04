@@ -1,5 +1,5 @@
 import React from 'react'
-import '../assets/css/components/customCard.css'
+import '../assets/css/customCard.css'
 import ProgressBar from './ProgressBar'
 
 

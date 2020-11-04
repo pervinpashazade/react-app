@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../assets/css/containers/layout/aside.css'
+import '../../assets/css/aside.css'
 import icon from '../../assets/img/icon.png'
 import NavbarUserDetails from './NavbarUserDetails'
 

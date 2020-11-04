@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import '../../assets/css/containers/layout/layout.css'
-import '../../assets/css/containers/layout/navbaruserdetails.css'
+import '../../assets/css/layout.css'
+import '../../assets/css/navbaruserdetails.css'
 import profileImg from '../../assets/img/profile.png'
 
 

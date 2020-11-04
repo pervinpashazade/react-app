@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../assets/css/containers/layout/contentwrapper.css'
+import '../../assets/css/contentwrapper.css'
 import CustomCard from '../../components/CustomCard'
 import Header from './Header'
 
