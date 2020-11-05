@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import '../../assets/css/layout.css'
-import '../../assets/css/navbaruserdetails.css'
 import profileImg from '../../assets/img/profile.png'
 
 

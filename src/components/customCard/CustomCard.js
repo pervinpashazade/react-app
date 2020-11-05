@@ -1,6 +1,6 @@
 import React from 'react'
-import '../assets/css/customCard.css'
-import ProgressBar from './ProgressBar'
+import './customCard.css'
+import ProgressBar from '../progressBar/ProgressBar'
 
 
 const CustomCard = (props) => {

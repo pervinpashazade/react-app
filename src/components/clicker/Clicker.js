@@ -1,11 +1,11 @@
 import React from 'react'
-import '../assets/css/clicker.css'
+import './clicker.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
-import useClicker from '../hooks/useClicker'
+import useClicker from '../../hooks/useClicker'
 
 const Clicker = (props) => {
     const {defaultValue} = props;

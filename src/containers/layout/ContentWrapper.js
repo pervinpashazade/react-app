@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import '../../assets/css/contentwrapper.css'
-import Card from '../../components/Clicker';
-import CustomCard from '../../components/CustomCard'
+import Card from '../../components/clicker/Clicker';
+import CustomCard from '../../components/customCard/CustomCard'
 import Header from './Header'
 
 const testData = [
@@ -9,15 +8,15 @@ const testData = [
         totalSummary: 1000,
         title: "Total Value of Disbursement",
         currency: "$",
-        completed: 400,
+        completed: 650,
         label: 'Policy',
         bgcolor: 'linear-gradient(90deg, #33D69F 0%, #50EDB8 111.47%)'
     },
     {
-        totalSummary: 1050,
+        totalSummary: 1750,
         title: "Total Value 2 of Disbursement",
         currency: "$",
-        completed: 460,
+        completed: 420,
         label: 'Claim',
         bgcolor: 'linear-gradient(90deg, #713BDB 0%, #A886E9 111.47%)'
     }
@@ -31,7 +30,7 @@ class ContentWrapper extends Component {
                 <Header />
 
                 <div className="container-fluid">
-                    <div className="row mt-4">
+                    <div className="row mt-3">
                         <div className="col-md-12">
                             <span>Task 1</span>
                         </div>
@@ -51,7 +50,7 @@ class ContentWrapper extends Component {
                         ))}
                     </div>
 
-                    <div className="row mt-4">
+                    <div className="row mt-3">
                         <div className="col-md-12">
                             <span>Task 2</span>
                         </div>
