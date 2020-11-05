@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../../assets/css/contentwrapper.css'
+import Card from '../../components/Clicker';
 import CustomCard from '../../components/CustomCard'
 import Header from './Header'
 
@@ -31,7 +32,9 @@ class ContentWrapper extends Component {
 
                 <div className="container-fluid">
                     <div className="row mt-4">
-
+                        <div className="col-md-12">
+                            <span>Task 1</span>
+                        </div>
                         {testData.map((item, idx) => (
 
                             <div className="col-md-4">
@@ -46,6 +49,18 @@ class ContentWrapper extends Component {
                             </div>
 
                         ))}
+                    </div>
+
+                    <div className="row mt-4">
+                        <div className="col-md-12">
+                            <span>Task 2</span>
+                        </div>
+                        <div className="col-md-4">
+                            <Card />
+                        </div>
+                        <div className="col-md-4">
+                            <Card defaultValue={5}/>
+                        </div>
                     </div>
                 </div>
             </div>
