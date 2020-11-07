@@ -207,7 +207,12 @@ a.nav-link:hover::after {
   width: 100%;
 }
 
-.modal-wrap{
+.modal-wrap {
   padding: 3em 0;
   background-color: #1c8df7;
+}
+
+input[type="password"], input.password {
+  -webkit-text-security: disc;
+  
 }
