@@ -35,7 +35,7 @@ class ContentWrapper extends Component {
                 <div className="container-fluid">
 
                     <div className="row mt-3">
-                        <div className="col-md-12 modal-wrap">
+                        <div className="col-md-12 modal-wrap d-flex justify-content-center">
                             <Login />
                         </div>
                     </div>
@@ -77,7 +77,7 @@ class ContentWrapper extends Component {
                             <span>Custom buttons:</span>
                         </div>
                         <div className="col-md-4">
-                            <Button buttonStyle={'btn-custom-primary'} size={'btn-custom-medium'}/>
+                            <Button text={'Sign Up'} buttonDisplay={'btn-custom-block'}/>
                         </div>
                     </div>
 

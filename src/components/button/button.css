@@ -33,11 +33,22 @@
     font-size: var(--btn-large-font);
 }
 
-/* button bas style */
+/* Displays */
+
+.btn-custom-inline{
+    display: inline-block;
+}
+
+.btn-custom-block{
+    display: block;
+    width: 100%;
+}
+
+/* button base style */
 
 .button {
     font-weight: 400;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: all 0.3s;
     outline: none !important;
     padding: var(--btn-medium-padding);
@@ -64,3 +75,4 @@
     color: var(--white);
     background-color: var(--hover-primary);
 }
+

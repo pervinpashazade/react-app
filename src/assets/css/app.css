@@ -208,8 +208,6 @@ a.nav-link:hover::after {
 }
 
 .modal-wrap{
-  display: flex;
-  justify-content: center;
   padding: 3em 0;
   background-color: #1c8df7;
 }
