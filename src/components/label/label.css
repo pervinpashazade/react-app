@@ -1,0 +1,44 @@
+:root {
+    /* Sizes */
+    --label-medium-margin: 0px 0px 8px 0px;
+    --label-small-margin: 0px 0px 5px 0px;
+    --label-large-margin: 0px 0px 12px 0px;
+    --label-medium-font: 16px;
+    --label-small-font: 14px;
+    --label-large-font: 20px;
+    --label-weight-normal: normal;
+    --label-weight-bold: bold;
+}
+
+label{
+    font-size: var(--label-medium-font);
+    font-weight: var(--label-weight-normal);
+    margin: var(--label-medium-margin);
+}
+
+/* Sizes */
+
+.label-small{
+    font-size: var(--label-small-font);
+    margin: var(--label-small-margin);
+}
+
+.label-medium{
+    font-size: var(--label-medium-font);
+    margin: var(--label-medium-margin);
+}
+
+.label-large{
+    font-size: var(--label-large-font);
+    margin: var(--label-large-margin);
+}
+
+/* Font Weight */
+
+.label-weght-normal{
+    font-weight: var(--label-weight-normal);
+}
+
+.label-weight-bold{
+    font-weight: var(--label-weight-bold);
+}

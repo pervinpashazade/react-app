@@ -9,7 +9,7 @@ const Input = (props) => {
         value,
         placeholder,
         name,
-        id,
+        inputId,
         isDisabled,
         inputSize,
         inputDisplay
@@ -31,7 +31,7 @@ const Input = (props) => {
     const checkDisplay = Displays.includes(inputDisplay) ? inputDisplay : "";
 
     return (
-        <input type={type} name={name} id={id}
+        <input type={type} name={name} id={inputId}
             className={'input ' + checkSize + checkDisplay}
             disabled={isDisabled === true} placeholder={placeholder} value={!value ? value : ""} />
     )
