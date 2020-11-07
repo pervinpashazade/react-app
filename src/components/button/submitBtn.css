@@ -1,0 +1,29 @@
+.btn-submit {
+    color: #fff;
+    background-color:#1c8df7;
+    border-color: #5bc2c2
+}
+/*#1c8df7c4 */
+.btn-submit:hover {
+    color: #fff;
+    background-color:#1c6af7;
+    border-color: #8ad3d3
+}
+
+.btn-submit:focus,
+.btn-submit.focus {
+    box-shadow: 0 0 0 0.2rem rgb(39 157 157 / 5%);
+}
+
+.btn-submit.disabled,
+.btn-submit:disabled {
+    color: #fff;
+    background-color:#737f8a;
+    border-color:#1c6af7;
+}
+
+.btn-submit:not(:disabled):not(.disabled):active:focus,
+.btn-submit:not(:disabled):not(.disabled).active:focus,
+.show>.btn-submit.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(28, 94, 94, 0.5)
+}

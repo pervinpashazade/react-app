@@ -3,6 +3,9 @@ import Card from '../../components/clicker/Clicker';
 import CustomCard from '../../components/customCard/CustomCard'
 import Header from './Header'
 
+import Login from '../../components/login/Login'
+import SubmitBtn from '../../components/button/SubmitBtn';
+
 const testData = [
     {
         totalSummary: 1000,
@@ -30,6 +33,13 @@ class ContentWrapper extends Component {
                 <Header />
 
                 <div className="container-fluid">
+
+                    <div className="row mt-3">
+                        <div className="col-md-12 modal-wrap">
+                            <Login />
+                        </div>
+                    </div>
+
                     <div className="row mt-3">
                         <div className="col-md-12">
                             <span>Task 1</span>
@@ -58,9 +68,22 @@ class ContentWrapper extends Component {
                             <Card />
                         </div>
                         <div className="col-md-4">
-                            <Card defaultValue={5}/>
+                            <Card defaultValue={5} />
                         </div>
                     </div>
+
+                    <div className="row mt-3">
+                        <div className="col-md-12">
+                            <span>Custom buttons:</span>
+                        </div>
+                        <div className="col-md-4">
+                            <SubmitBtn text="Custom text" />
+                            <SubmitBtn text="Custom disabled" isDisabled={true} />
+                            <SubmitBtn />
+                            <SubmitBtn isDisabled={true}/>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         )
