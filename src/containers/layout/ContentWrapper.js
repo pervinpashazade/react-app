@@ -3,7 +3,7 @@ import Card from '../../components/clicker/Clicker';
 import CustomCard from '../../components/customCard/CustomCard'
 import Header from './Header'
 
-import Login from '../../components/login/Login'
+import RegisterForm from '../../components/register/RegisterForm'
 import Button from '../../components/button/Button';
 
 const testData = [
@@ -36,7 +36,7 @@ class ContentWrapper extends Component {
 
                     <div className="row mt-3">
                         <div className="col-md-12 modal-wrap d-flex justify-content-center">
-                            <Login />
+                            <RegisterForm />
                         </div>
                     </div>
 

@@ -23,7 +23,7 @@
     transition: all .3s;
 }
 
-.input:focus{
+.input:focus {
     border-color: #80bdff;
     outline: 0;
     box-shadow: 0 0 0 0.2rem #1c8df72e;
@@ -31,17 +31,23 @@
 
 /* Sizes */
 
-.input-small{
+.input-small {
     padding: var(--input-small-padding);
     font-size: var(--input-small-font);
 }
 
-.input-medium{
+.input-medium {
     padding: var(--input-medium-padding);
     font-size: var(--input-medium-font);
 }
 
-.input-large{
+.input-large {
     padding: var(--input-large-padding);
     font-size: var(--input-large-font);
+}
+
+/* for validation */
+
+.input-error {
+    border-color: #dc3545!important;
 }

@@ -5,6 +5,7 @@ import './input.css'
 const Input = (props) => {
 
     const {
+        event,
         type,
         value,
         placeholder,
@@ -33,7 +34,8 @@ const Input = (props) => {
     return (
         <input type={type} name={name} id={inputId}
             className={'input ' + checkSize + checkDisplay}
-            disabled={isDisabled === true} placeholder={placeholder} value={!value ? value : ""} />
+            disabled={isDisabled === true} placeholder={placeholder} value={!value ? value : ""} 
+            onChange={event} />
     )
 
 }

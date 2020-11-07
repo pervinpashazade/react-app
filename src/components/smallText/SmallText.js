@@ -1,5 +1,6 @@
 import React from 'react'
 import './smallText.css'
+import ActionLink from '../actionLink/ActionLink'
 
 
 const SmallText = (props) => {
@@ -7,7 +8,10 @@ const SmallText = (props) => {
     const {
         text,
         textPosition,
-        // ChildElement
+        textStyle,
+        showActionLink,
+        hrefActionLink,
+        textActionLink
     } = props;
 
     const TextPositions = [
@@ -16,11 +20,21 @@ const SmallText = (props) => {
         "text-right",
     ]
 
-    const checkTextPosition = TextPositions.includes(textPosition) ? textPosition : "";
+    const TextStyles = [
+        "text-danger",
+        "text-success",
+        "text-warning",
+    ]
 
+    const checkTextPosition = TextPositions.includes(textPosition) ? textPosition : "";
+    const checkStyle = TextStyles.includes(textStyle) ? textStyle : "";
 
     return (
-        <small className={checkTextPosition}>{(!text ? "" : text)}</small>
+        <small className={checkTextPosition + " " + checkStyle}>
+            {(!text ? "" : text)}
+            {showActionLink === true ? <ActionLink text={!textActionLink ? "" : textActionLink}
+                link={!hrefActionLink ? "#0" : hrefActionLink} /> : ""}
+        </small>
     )
 
 }
