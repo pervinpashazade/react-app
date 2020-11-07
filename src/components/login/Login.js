@@ -1,13 +1,13 @@
 import React from 'react'
-import SubmitBtn from '../button/SubmitBtn'
+// import Button from '../button/Button'
 import './login.css'
 
 function Login() {
     return (
         <div className="login-modal">
             <div>
-                <SubmitBtn />
-                <SubmitBtn isDisabled={true} text={"Continue"} />
+                {/* <Button />
+                <Button isDisabled={true} text={"Continue"} /> */}
             </div>
         </div>
     )

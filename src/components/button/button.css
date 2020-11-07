@@ -1,0 +1,66 @@
+:root {
+    /* base colors */
+    --white: #fff;
+    --primary: #1c8df7 !important;
+    --success: #28a745!important;
+    --warning: #ffc107!important;
+    --danger: #dc3545!important;
+    /* hover colors */
+    --hover-primary: #1477d3;
+    /* Sizes */
+    --btn-medium-padding: 6px 12px;
+    --btn-small-padding: 4px 8px;
+    --btn-large-padding: 8px 16px;
+    --btn-medium-font: 16px;
+    --btn-small-font: 14px;
+    --btn-large-font: 20px
+}
+
+/* Sizes */
+
+.btn-custom-small {
+    padding: var(--btn-small-padding);
+    font-size: var(--btn-small-font);
+}
+
+.btn-custom-medium {
+    padding: var(--btn-medium-padding);
+    font-size: var(--btn-medium-font);
+}
+
+.btn-custom-large {
+    padding: var(--btn-medium-padding);
+    font-size: var(--btn-large-font);
+}
+
+/* button bas style */
+
+.button {
+    font-weight: 400;
+    border-radius: 10px;
+    transition: all 0.3s;
+    outline: none !important;
+    padding: var(--btn-medium-padding);
+    font-size: var(--btn-medium-font);
+}
+
+.button:disabled, .button.disabled {
+    opacity: .65;
+}
+
+.button:not(:disabled):not(.disabled):active:focus, .button:not(:disabled):not(.disabled).active:focus, .show>.button.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(25, 80, 80, 0.5)
+}
+
+/* btn-custom-primary */
+
+.btn-custom-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+}
+
+.btn-custom-primary:hover {
+    color: var(--white);
+    background-color: var(--hover-primary);
+}

@@ -4,7 +4,7 @@ import CustomCard from '../../components/customCard/CustomCard'
 import Header from './Header'
 
 import Login from '../../components/login/Login'
-import SubmitBtn from '../../components/button/SubmitBtn';
+import Button from '../../components/button/Button';
 
 const testData = [
     {
@@ -77,10 +77,7 @@ class ContentWrapper extends Component {
                             <span>Custom buttons:</span>
                         </div>
                         <div className="col-md-4">
-                            <SubmitBtn text="Custom text" />
-                            <SubmitBtn text="Custom disabled" isDisabled={true} />
-                            <SubmitBtn />
-                            <SubmitBtn isDisabled={true}/>
+                            <Button buttonStyle={'btn-custom-primary'} size={'btn-custom-medium'}/>
                         </div>
                     </div>
 
