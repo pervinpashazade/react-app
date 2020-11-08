@@ -8,6 +8,7 @@ import taskCustomCard from '../tasks/taskCustomCard.js';
 import taskClickerCard from '../tasks/taskClickerCard.js';
 import taskComponents from '../tasks/taskComponents.js';
 import Home from '../home/Home'
+import registerComponent from '../tasks/registerComponent.js';
 
 
 
@@ -23,7 +24,7 @@ class Layout extends Component {
                         <div className="container-fluid">
                             <Switch>
                                 <Route path='/' exact component={Home} />
-                                <Route path='/registerform' component={RegisterForm} />
+                                <Route path='/registercomponent' component={registerComponent} />
                                 <Route path='/customcard' component={taskCustomCard} />
                                 <Route path='/clickercard' component={taskClickerCard} />
                                 <Route path='/components' component={taskComponents} />
