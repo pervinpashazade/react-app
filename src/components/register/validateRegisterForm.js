@@ -21,7 +21,7 @@ export default function validateRegisterForm(values) {
         errors.surname = "* Last name must be minimum 3 character";
     } else if (values.surname.trim().length > 25) {
         errors.surname = "* Last name must be maximum 25 character";
-    } else if (!/^[a-zA-Z]+$/.test(values.name)) {
+    } else if (!/^[a-zA-Z]+$/.test(values.surname)) {
         errors.surname = "* Last name must contains only letters";
     }
 
@@ -29,9 +29,9 @@ export default function validateRegisterForm(values) {
     if (!values.email) {
         errors.email = "* Email is required";
     } 
-    // else if (!/\S+@\S\+\.\S+/.test(values.name)) {
-    //     errors.email = "* Email address is invalid";
-    // }
+    else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(values.email)) {
+        errors.email = "* Email address is invalid";
+    }
 
     //password
     if (!values.password) {
