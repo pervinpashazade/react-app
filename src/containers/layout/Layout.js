@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Aside from './Aside.js'
 import '../../assets/img/profile.png';
 import Header from './Header'
-import RegisterForm from '../../components/register/RegisterForm'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import taskCustomCard from '../tasks/taskCustomCard.js';
 import taskClickerCard from '../tasks/taskClickerCard.js';

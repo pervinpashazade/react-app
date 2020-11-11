@@ -15,15 +15,7 @@ const RegisterForm = () => {
 
     function submit() {
         console.log(values)
-        clearForm();
         alert("Form Submitted Successfully")
-    }
-
-    function clearForm() {
-        document.getElementById("name").value = "";
-        document.getElementById("surname").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("password").value = "";
     }
 
     return (
@@ -36,9 +28,6 @@ const RegisterForm = () => {
                 <input type="text" id="name" name="name" className={'input ' + (errors.name && " input-error ")} placeholder="First name"
                     value={values.name} onChange={handleChanges} />
                 {!errors.name ? "" : <span className="text-danger">{errors.name}</span>}
-
-                {/* <Input placeholder={'First name'} inputId={'firstname'}
-                        onChange={(e) => { setFirstName(e.target.value) }} /> */}
             </div>
             <div className="col-md-12 form-group">
                 <Label text={'Last name'} labelFor={'lastname'} fontWeight={'label-weight-bold'} />
