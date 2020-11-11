@@ -8,6 +8,7 @@ import taskClickerCard from '../tasks/taskClickerCard.js';
 import taskComponents from '../tasks/taskComponents.js';
 import Home from '../home/Home'
 import registerComponent from '../tasks/registerComponent.js';
+import Cabinet from '../cabinet/Cabinet.js';
 
 
 
@@ -27,6 +28,7 @@ class Layout extends Component {
                                 <Route path='/customcard' component={taskCustomCard} />
                                 <Route path='/clickercard' component={taskClickerCard} />
                                 <Route path='/components' component={taskComponents} />
+                                <Route path='/cabinet' component={Cabinet} />
                             </Switch>
                         </div>
                     </div>

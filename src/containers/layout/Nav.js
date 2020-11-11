@@ -10,6 +10,7 @@ class Nav extends Component {
                 <NavLink to='customcard' className="nav-link" activeClassName="active">Custom Card</NavLink>
                 <NavLink to='clickercard' className="nav-link" activeClassName="active">Clicker Card</NavLink>
                 <NavLink to='components' className="nav-link" activeClassName="active">Components</NavLink>
+                <NavLink to='cabinet' className="nav-link" activeClassName="active">Cabinet</NavLink>
             </div>
         )
     }
