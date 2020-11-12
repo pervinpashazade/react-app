@@ -1,21 +1,29 @@
-import React, { Component } from 'react'
+import React, { useState, useMemo } from 'react'
 import Aside from './Aside.js'
 import '../../assets/img/profile.png';
 import Header from './Header'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import taskCustomCard from '../tasks/taskCustomCard.js';
-import taskClickerCard from '../tasks/taskClickerCard.js';
+import taskClickerCard from '../tasks/TaskClickerCard.js';
 import taskComponents from '../tasks/taskComponents.js';
 import Home from '../home/Home'
 import registerComponent from '../tasks/registerComponent.js';
-import Cabinet from '../cabinet/Cabinet.js';
+import Cabinet from '../cabinet/Cabinet';
+import { UserContext } from '../../context/UserContext.js';
+
+const Layout = (params) => {
+    let data = JSON.parse(localStorage.getItem('user'));
+
+    console.log(data)
+
+    const [value, setValue] = useState(data)
+
+    const providerValue = useMemo(() => ({ value, setValue }), [value, setValue])
 
 
-
-class Layout extends Component {
-    render() {
-        return (
-            <Router>
+    return (
+        <Router>
+            <UserContext.Provider value={providerValue}>
                 <div className="layout">
                     <Aside />
                     <div className="content-wrapper">
@@ -24,18 +32,22 @@ class Layout extends Component {
                         <div className="container-fluid">
                             <Switch>
                                 <Route path='/' exact component={Home} />
-                                <Route path='/registercomponent' component={registerComponent} />
+                                {!data ? <Route path='/registercomponent' component={registerComponent} /> : null}
+
                                 <Route path='/customcard' component={taskCustomCard} />
                                 <Route path='/clickercard' component={taskClickerCard} />
                                 <Route path='/components' component={taskComponents} />
-                                <Route path='/cabinet' component={Cabinet} />
+
+                                {data ? <Route path='/cabinet' component={Cabinet} /> : (<Redirect to={"/"} />)}
+
                             </Switch>
                         </div>
                     </div>
                 </div>
-            </Router>
-        )
-    }
+            </UserContext.Provider>
+        </Router>
+    )
+
 }
 
 export default Layout;

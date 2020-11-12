@@ -29,8 +29,12 @@ const useLoginForm = (callback, validateRegisterForm) => {
         setValues({ name: "", surname: "", email: "", password: "" })
     }
 
+
+
     useEffect(() => {
+        
         if (Object.keys(errors).length === 0 && isSubmitting) {
+
             callback();
             clearForm();
         }

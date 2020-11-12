@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { Redirect } from 'react'
 import './login.css'
 import Button from '../button/Button'
-// import Input from '../input/Input'
 import Label from '../label/Label'
 import SmallText from '../smallText/SmallText'
 import useRegisterForm from '../../hooks/useRegisterForm'
@@ -14,9 +13,14 @@ const RegisterForm = () => {
     const { handleChanges, handleSubmit, values, errors } = useRegisterForm(submit, validateRegisterForm);
 
     function submit() {
-        console.log(values)
-        alert("Form Submitted Successfully")
+        localStorage.setItem("user", JSON.stringify(values));
+        alert("Form Submitted Successfully");
+
+        window.location.href = "/cabinet";
+        
+        // { values ? <Redirect to='/cabinet' /> : <Redirect to='/' />}
     }
+
 
     return (
         <form onSubmit={handleSubmit} noValidate>
