@@ -4,7 +4,7 @@ import '../../assets/img/profile.png';
 import Header from './Header'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import taskCustomCard from '../tasks/taskCustomCard.js';
-import taskClickerCard from '../tasks/TaskClickerCard.js';
+import TaskClickerCard from '../tasks/TaskClickerCard.js';
 import taskComponents from '../tasks/taskComponents.js';
 import Home from '../home/Home'
 import registerComponent from '../tasks/registerComponent.js';
@@ -35,7 +35,7 @@ const Layout = (params) => {
                                 {!data ? <Route path='/registercomponent' component={registerComponent} /> : null}
 
                                 <Route path='/customcard' component={taskCustomCard} />
-                                <Route path='/clickercard' component={taskClickerCard} />
+                                <Route path='/clickercard' component={TaskClickerCard} />
                                 <Route path='/components' component={taskComponents} />
 
                                 {data ? <Route path='/cabinet' component={Cabinet} /> : (<Redirect to={"/"} />)}
