@@ -21,6 +21,7 @@ const Nav = (props) => {
             <NavLink to='customcard' className="nav-link" activeClassName="active">Custom Card</NavLink>
             <NavLink to='clickercard' className="nav-link" activeClassName="active">Clicker Card</NavLink>
             <NavLink to='components' className="nav-link" activeClassName="active">Components</NavLink>
+            <NavLink to='task5' className="nav-link" activeClassName="active">Vacancies</NavLink>
 
             {value ? <NavLink to='cabinet' className="nav-link" activeClassName="active">Cabinet</NavLink> : null}
 

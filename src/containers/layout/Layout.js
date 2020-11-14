@@ -10,8 +10,9 @@ import Home from '../home/Home'
 import registerComponent from '../tasks/registerComponent.js';
 import Cabinet from '../cabinet/Cabinet';
 import { UserContext } from '../../context/UserContext.js';
+import Vacancies from '../vacancies/Vacancies.js';
 
-const Layout = (params) => {
+const Layout = () => {
     let data = JSON.parse(localStorage.getItem('user'));
 
     const [value, setValue] = useState(data)
@@ -34,6 +35,7 @@ const Layout = (params) => {
                                 <Route path='/customcard' component={taskCustomCard} />
                                 <Route path='/clickercard' component={TaskClickerCard} />
                                 <Route path='/components' component={taskComponents} />
+                                <Route path='/task5' component={Vacancies} />
 
                                 {data ? <Route path='/cabinet' component={Cabinet} /> : (<Redirect to={"/"} />)}
 
