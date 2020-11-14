@@ -7,8 +7,7 @@ export default function Home() {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    const { value, setValue } = useContext(UserContext)
-
+    const { value } = useContext(UserContext)
 
     return (
         <div className="row">

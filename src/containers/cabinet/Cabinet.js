@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../../context/UserContext'
 
-const Cabinet = (props) => {
+const Cabinet = () => {
 
-    const { value, setValue } = useContext(UserContext)
-
+    const { value } = useContext(UserContext)
 
     return (
         <div className="row">

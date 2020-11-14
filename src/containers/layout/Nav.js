@@ -24,8 +24,6 @@ const Nav = (props) => {
 
             {value ? <NavLink to='cabinet' className="nav-link" activeClassName="active">Cabinet</NavLink> : null}
 
-
-
             {value ? <button onClick={logout} className="btn btn-sm btn-warning">Logout</button>
                 : null}
         </div>

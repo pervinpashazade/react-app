@@ -14,12 +14,9 @@ import { UserContext } from '../../context/UserContext.js';
 const Layout = (params) => {
     let data = JSON.parse(localStorage.getItem('user'));
 
-    console.log(data)
-
     const [value, setValue] = useState(data)
 
     const providerValue = useMemo(() => ({ value, setValue }), [value, setValue])
-
 
     return (
         <Router>

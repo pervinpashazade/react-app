@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import icon from '../../assets/img/icon.png'
 import NavbarUserDetails from './NavbarUserDetails'
 
-
 class Aside extends Component {
     render() {
         return (

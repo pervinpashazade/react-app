@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import profileImg from '../../assets/img/profile.png'
 
-
 class NavbarUserDetails extends Component {
     render() {
         return (
