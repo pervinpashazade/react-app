@@ -1,4 +1,4 @@
-import React, { Redirect } from 'react'
+import React from 'react'
 import './login.css'
 import Button from '../button/Button'
 import Label from '../label/Label'
@@ -17,10 +17,7 @@ const RegisterForm = () => {
         alert("Form Submitted Successfully");
 
         window.location.href = "/cabinet";
-        
-        // { values ? <Redirect to='/cabinet' /> : <Redirect to='/' />}
     }
-
 
     return (
         <form onSubmit={handleSubmit} noValidate>
@@ -68,9 +65,7 @@ const RegisterForm = () => {
                     showActionLink={true} textActionLink={'Sign In'} />
             </div>
         </form>
-
     )
 }
-
 
 export default RegisterForm;

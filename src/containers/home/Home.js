@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import Modal from '../../components/modal/Modal'
 import RegisterForm from '../../components/register/RegisterForm'
-import { UserContext } from '../../context/UserContext'
+import { UserContext } from '../../context/Context'
 
 export default function Home() {
 

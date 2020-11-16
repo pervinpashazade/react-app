@@ -28,9 +28,9 @@ export default function taskCustomCard() {
             <div className="col-md-12">
                 <span>Task 1</span>
             </div>
-            {testData.map((item, idx) => (
+            {testData.map((item) => (
 
-                <div className="col-md-4">
+                <div key={item.title} className="col-md-4">
                     <CustomCard
                         totalSummary={item.totalSummary}
                         title={item.title}
