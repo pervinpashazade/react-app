@@ -27,11 +27,12 @@ const Vacancies = () => {
 
     return (
         <VacancyContext.Provider value={providerValue}>
+
             <div className="row mt-4">
                 {
-                    vacancies.map(vacancy => {
+                    vacancies.map((vacancy, index) => {
                         return (
-                            <div key={vacancy.id} className="col-md-6">
+                            <div key={index} className="col-md-6">
                                 <VacancyCard
                                     id={vacancy.id}
                                     isVip={vacancy.isVip}
@@ -58,8 +59,8 @@ const Vacancies = () => {
                     })
                 }
             </div>
+            
         </VacancyContext.Provider>
-
     )
 }
 

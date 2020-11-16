@@ -96,6 +96,7 @@
     border-radius: 1px;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
+    overflow: hidden;
 }
 
 .vacancy-card:hover .footer .read-more a::after {
