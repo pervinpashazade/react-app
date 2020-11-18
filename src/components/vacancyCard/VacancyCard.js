@@ -30,7 +30,6 @@ const VacancyCard = (props) => {
 
     let salary = "";
 
-
     const getSalary = () => {
         if (minSalary && maxSalary) {
             salary = minSalary + " - " + maxSalary + " ";

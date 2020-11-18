@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import Aside from './Aside.js'
 import '../../assets/img/profile.png';
 import Header from './Header'
@@ -9,15 +9,36 @@ import taskComponents from '../tasks/taskComponents.js';
 import Home from '../home/Home'
 import registerComponent from '../tasks/registerComponent.js';
 import Cabinet from '../cabinet/Cabinet';
-import { UserContext } from '../../context/Context.js';
+import { UserContext, VacancyContext } from '../../context/Context.js';
 import Vacancies from '../vacancies/Vacancies.js';
+import axios from 'axios';
+import VacancyCardSkeleton from '../../components/skeletons/VacancyCardSkeleton.js';
 
 const Layout = () => {
     let data = JSON.parse(localStorage.getItem('user'));
-
     const [value, setValue] = useState(data)
-
     const providerValue = useMemo(() => ({ value, setValue }), [value, setValue])
+
+    const [vacancies, setVacancies] = useState([])
+    const vacancyListValue = useMemo(() => ({ vacancies, setVacancies }), [vacancies, setVacancies])
+    const [loading, setLoading] = useState(false)
+
+    const getAllVacancies = async () => {
+        const response = await axios.get('https://devjobscore.prospectsmb.com/v1/vacancies')
+            .catch(err => console.log("Api Error", err))
+
+        if (response && response.data) setVacancies(response.data.data)
+    }
+
+    useEffect(() => {
+        getAllVacancies();
+        setLoading(true);
+        const timing = setTimeout(() => {
+            getAllVacancies();
+            setLoading(false);
+        }, 2000);
+        return () => clearTimeout(timing);
+    }, [])
 
     return (
         <Router>
@@ -28,19 +49,24 @@ const Layout = () => {
                         <Header />
 
                         <div className="container-fluid">
-                            <Switch>
-                                <Route path='/' exact component={Home} />
-                                {!data ? <Route path='/registercomponent' component={registerComponent} /> : null}
+                            {loading && <VacancyCardSkeleton />}
+                            {!loading &&
+                                <Switch>
+                                    <Route path='/' exact component={Home} />
+                                    {!data ? <Route path='/registercomponent' component={registerComponent} /> : null}
 
-                                <Route path='/customcard' component={taskCustomCard} />
-                                <Route path='/clickercard' component={TaskClickerCard} />
-                                <Route path='/components' component={taskComponents} />
-                                <Route path='/task5' component={Vacancies} />
+                                    <Route path='/customcard' component={taskCustomCard} />
+                                    <Route path='/clickercard' component={TaskClickerCard} />
+                                    <Route path='/components' component={taskComponents} />
+                                    <VacancyContext.Provider value={vacancyListValue.vacancies}>
+                                        <Route path='/task5' component={Vacancies} />
+                                    </VacancyContext.Provider>
 
+                                    {data ? <Route path='/cabinet' component={Cabinet} /> : (<Redirect to={"/"} />)}
 
-                                {data ? <Route path='/cabinet' component={Cabinet} /> : (<Redirect to={"/"} />)}
+                                </Switch>
+                            }
 
-                            </Switch>
                         </div>
                     </div>
                 </div>

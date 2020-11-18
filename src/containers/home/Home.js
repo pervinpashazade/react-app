@@ -6,7 +6,6 @@ import { UserContext } from '../../context/Context'
 export default function Home() {
 
     const [isOpen, setIsOpen] = useState(false)
-
     const { value } = useContext(UserContext)
 
     return (

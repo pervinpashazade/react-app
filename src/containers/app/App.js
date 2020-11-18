@@ -1,3 +1,4 @@
+import React from 'react'
 import '../../assets/css/app.css';
 import Layout from '../layout/Layout';
 
