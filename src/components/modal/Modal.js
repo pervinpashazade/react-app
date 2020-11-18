@@ -41,7 +41,6 @@ export default function Modal({ open, children, onClose }) {
     if (!open) return null;
 
     return (
-        // <div className="modal-wrap d-flex justify-content-center">
         <div style={Modal_Overlay}>
             <div style={Modal_Style} className={'col-md-4'}>
                 <button style={Close_Style} onClick={onClose} className="button btn-custom-primary">

@@ -13,6 +13,7 @@ import { UserContext, VacancyContext } from '../../context/Context.js';
 import Vacancies from '../vacancies/Vacancies.js';
 import axios from 'axios';
 import VacancyCardSkeleton from '../../components/skeletons/VacancyCardSkeleton.js';
+import VacancyDetail from '../../components/vacancyCard/VacancyDetail.js';
 
 const Layout = () => {
     let data = JSON.parse(localStorage.getItem('user'));
@@ -60,6 +61,7 @@ const Layout = () => {
                                     <Route path='/components' component={taskComponents} />
                                     <VacancyContext.Provider value={vacancyListValue.vacancies}>
                                         <Route path='/task5' component={Vacancies} />
+                                        <Route path='/vacancydetail' component={VacancyDetail} />
                                     </VacancyContext.Provider>
 
                                     {data ? <Route path='/cabinet' component={Cabinet} /> : (<Redirect to={"/"} />)}

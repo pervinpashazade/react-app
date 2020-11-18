@@ -1,6 +1,7 @@
 .vacancy-card {
     position: relative;
     background-color: #fff;
+    color: #212529;
     padding: 20px 30px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -78,14 +79,14 @@
 
 .vacancy-card .footer .read-more {
     position: relative;
-    color:  #888CB7;
+    color: #888CB7;
 }
 
-.vacancy-card .footer .read-more a {
-    color:  #888CB7;
+.vacancy-card .footer .read-more span {
+    color: #888CB7;
 }
 
-.vacancy-card .footer .read-more a::after {
+.vacancy-card .footer .read-more span::after {
     content: '';
     position: absolute;
     bottom: 0px;
@@ -99,7 +100,7 @@
     overflow: hidden;
 }
 
-.vacancy-card:hover .footer .read-more a::after {
+.vacancy-card:hover .footer .read-more span::after {
     right: initial;
     left: 0%;
     width: 100%;

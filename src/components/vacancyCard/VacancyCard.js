@@ -3,7 +3,6 @@ import './vacancyCard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark as faBookmark } from '@fortawesome/free-regular-svg-icons'
 import { faBookmark as faBookmarked, faEye } from '@fortawesome/free-solid-svg-icons'
-import {Link} from 'react-router-dom'
 
 const VacancyCard = (props) => {
 
@@ -69,7 +68,7 @@ const VacancyCard = (props) => {
                     <span>{viewsCount}</span>
                 </div>
                 <div className="read-more">
-                    <Link className="link" to="/public">Read more</Link>
+                    <span className="link" to="/public">Read more</span>
                 </div>
             </div>
         </div>
