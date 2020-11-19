@@ -1,0 +1,73 @@
+.vacancy-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    padding: 0;
+    margin: 0px 0px 20px 0px;
+}
+
+ul li{
+    list-style-type: none;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    text-align: start;
+}
+
+/* leftside */
+
+.leftside {
+    color: #fff;
+    background-color: #2C2760;
+    padding: 30px 30px 30px 45px;
+    box-shadow: 0px 23px 49px -5px #6961BD;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.leftside h3 {
+    font-weight: normal;
+    font-size: 27px;
+}
+
+.bg-white-radius{
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.leftside ul.list-details h4 {
+    font-weight: normal;
+    font-size: 18px;
+    letter-spacing: 2.1px;
+    color: #ADA5FF;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.leftside ul.list-details h6 {
+    font-weight: normal;
+    font-size: 15px;
+    color: #ADA5FF;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* righside */
+
+.rightside{
+    padding: 30px 30px 30px 15px;
+}
+
+.rightside h5{
+    color: #2C2760;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;800;900&display=swap');
+.card {
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+}

@@ -1,9 +1,9 @@
-.card {
+section#clicker .card {
     padding: 20px;
     background-color: #fff;
 }
 
-.clicker {
+section#clicker .clicker {
     border: 1px solid #c7cacd;
     border-radius: 5px;
     overflow: hidden;
@@ -12,23 +12,23 @@
     box-shadow: 0px 5px 8px 0px rgb(0 0 0 / 28%);
 }
 
-.clicker .resultNumber {
+section#clicker .clicker .resultNumber {
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.clicker .resultNumber span {
+section#clicker .clicker .resultNumber span {
     font-size: 6em;
     color: #888f97;
 }
 
-.clicker .buttons {
+section#clicker .clicker .buttons {
     display: flex;
 }
 
-.clicker .buttons button {
+section#clicker .clicker .buttons button {
     flex: 1 auto;
     border-radius: 0;
     padding: 20px !important;

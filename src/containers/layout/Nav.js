@@ -16,14 +16,14 @@ const Nav = (props) => {
         <div className="navbar">
             <NavLink to='/' exact className="nav-link" activeClassName="active">Home</NavLink>
 
-            {!value ? <NavLink to='registercomponent' className="nav-link" activeClassName="active">Register</NavLink>
+            {!value ? <NavLink to='/registercomponent' className="nav-link" activeClassName="active">Register</NavLink>
                 : null}
-            <NavLink to='customcard' className="nav-link" activeClassName="active">Custom Card</NavLink>
-            <NavLink to='clickercard' className="nav-link" activeClassName="active">Clicker Card</NavLink>
-            <NavLink to='components' className="nav-link" activeClassName="active">Components</NavLink>
-            <NavLink to='task5' className="nav-link" activeClassName="active">Vacancies</NavLink>
+            <NavLink to='/customcard' className="nav-link" activeClassName="active">Custom Card</NavLink>
+            <NavLink to='/clickercard' className="nav-link" activeClassName="active">Clicker Card</NavLink>
+            <NavLink to='/components' className="nav-link" activeClassName="active">Components</NavLink>
+            <NavLink to='/task5' className="nav-link" activeClassName="active">Vacancies</NavLink>
 
-            {value ? <NavLink to='cabinet' className="nav-link" activeClassName="active">Cabinet</NavLink> : null}
+            {value ? <NavLink to='/cabinet' className="nav-link" activeClassName="active">Cabinet</NavLink> : null}
 
             {value ? <button onClick={logout} className="btn btn-sm btn-warning">Logout</button>
                 : null}

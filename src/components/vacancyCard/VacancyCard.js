@@ -3,6 +3,9 @@ import './vacancyCard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark as faBookmark } from '@fortawesome/free-regular-svg-icons'
 import { faBookmark as faBookmarked, faEye } from '@fortawesome/free-solid-svg-icons'
+import Moment from 'react-moment';
+import 'moment-timezone';
+// import 'moment/locale/az';
 
 const VacancyCard = (props) => {
 
@@ -28,6 +31,8 @@ const VacancyCard = (props) => {
     } = props;
 
     let salary = "";
+    let experience = ""
+    let dateText = ""
 
     const getSalary = () => {
         if (minSalary && maxSalary) {
@@ -45,6 +50,27 @@ const VacancyCard = (props) => {
         return salary
     }
 
+    const getExperience = () => {
+        if (minExperience > 0 && maxExperience > 0) {
+            experience = minExperience + "~" + maxExperience + " year"
+        }
+
+        return experience;
+    }
+
+    function renderDate() {
+        let expireDate = new Date(expiredAt)
+        let currentDate = new Date()
+
+        if(currentDate > expireDate){
+            dateText = <span className="text-danger">Expired: </span>
+        }else{
+            dateText = "Expire: "
+        }
+
+        return dateText;
+    }
+
     return (
         <div className="vacancy-card">
             <div className="header">
@@ -58,13 +84,28 @@ const VacancyCard = (props) => {
             </div>
             <div className="body">
                 <ul>
-                    <li>- {position}</li>
-                    <li>- {city}</li>
+                    <li>- Position: <span>{position}</span></li>
+                    {getExperience() ? <li>- Experience: <span>{getExperience()}</span></li> : null}
+                    <li>- City: <span>{city}</span></li>
+                    {createdAt ? <li>- {"Date: "}
+                        <span>
+                            <Moment fromNow >
+                                {createdAt}
+                            </Moment>
+                        </span>
+                    </li> : null}
+                    {expiredAt ? <li>- {renderDate()}
+                        <span>
+                            <Moment format="LL" >
+                                {expiredAt}
+                            </Moment>
+                        </span>
+                    </li> : null}
                 </ul>
             </div>
             <div className="footer">
                 <div className="views">
-                    <FontAwesomeIcon className="icon" style={requested ? {color: "#888cb7"} : ""} icon={faEye} />
+                    <FontAwesomeIcon className="icon" style={requested ? { color: "#888cb7" } : ""} icon={faEye} />
                     <span>{viewsCount}</span>
                 </div>
                 <div className="read-more">

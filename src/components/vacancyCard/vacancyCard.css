@@ -2,6 +2,7 @@
     position: relative;
     background-color: #fff;
     color: #212529;
+    /* min-height: 280px; */
     padding: 20px 30px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -58,6 +59,11 @@
     padding-left: 0;
     margin-bottom: 10px;
     list-style-type: none;
+    font-weight: 300;
+}
+
+.vacancy-card .body ul li span{
+    font-weight: 400;
 }
 
 /* footer */

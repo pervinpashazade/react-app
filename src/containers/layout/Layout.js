@@ -25,20 +25,17 @@ const Layout = () => {
     const [loading, setLoading] = useState(false)
 
     const getAllVacancies = async () => {
+        setLoading(true);
+
         const response = await axios.get('https://devjobscore.prospectsmb.com/v1/vacancies')
             .catch(err => console.log("Api Error", err))
 
         if (response && response.data) setVacancies(response.data.data)
+        setLoading(false)
     }
 
     useEffect(() => {
         getAllVacancies();
-        setLoading(true);
-        const timing = setTimeout(() => {
-            getAllVacancies();
-            setLoading(false);
-        }, 2000);
-        return () => clearTimeout(timing);
     }, [])
 
     return (
@@ -62,6 +59,7 @@ const Layout = () => {
                                     <VacancyContext.Provider value={vacancyListValue.vacancies}>
                                         <Route path='/task5' component={Vacancies} />
                                         <Route path='/vacancydetail' component={VacancyDetail} />
+                                        <Route path='/vacancy/:vacancyId' component={VacancyDetail} />
                                     </VacancyContext.Provider>
 
                                     {data ? <Route path='/cabinet' component={Cabinet} /> : (<Redirect to={"/"} />)}
