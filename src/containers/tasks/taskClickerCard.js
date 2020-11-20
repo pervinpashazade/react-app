@@ -11,6 +11,7 @@ export default function TaskClickerCard() {
                 <Clicker />
             </div>
             <div className="col-md-4">
+                
                 <Clicker defaultValue={5} />
             </div>
         </div>
