@@ -31,7 +31,8 @@ const Layout = () => {
             .catch(err => console.log("Api Error", err))
 
         if (response && response.data) setVacancies(response.data.data)
-        setLoading(false)
+        setLoading(false) 
+        
     }
 
     useEffect(() => {
