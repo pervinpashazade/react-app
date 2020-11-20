@@ -5,6 +5,7 @@ import Header from './Header'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import taskCustomCard from '../tasks/taskCustomCard.js';
 // import TaskClickerCard from '../tasks/taskClickerCard.js';
+// import TaskClickerCard from '../tasks/TaskClickerCard'
 import taskComponents from '../tasks/taskComponents.js';
 import Home from '../home/Home'
 import registerComponent from '../tasks/registerComponent.js';
