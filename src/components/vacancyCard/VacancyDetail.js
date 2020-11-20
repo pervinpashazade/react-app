@@ -4,10 +4,9 @@ import axios from 'axios'
 import './vacancyDetail.css'
 import VacancyCardSkeleton from '../skeletons/VacancyCardSkeleton'
 import Moment from 'react-moment';
-import 'moment-timezone';
-import { max } from 'moment-timezone'
+// import 'moment-timezone';
 
-const VacancyDetail = (props) => {
+const VacancyDetail = () => {
 
     const { vacancyId } = useParams()
     const [vacancy, setVacancy] = useState([]);
@@ -16,8 +15,6 @@ const VacancyDetail = (props) => {
 
 
     const {
-        id,
-        isVip,
         name,
         sector,
         category,
@@ -54,7 +51,7 @@ const VacancyDetail = (props) => {
             return request
         }
         getData()
-    }, [])
+    }, [url])
 
     let salary = "";
     let dateText = "";
@@ -73,7 +70,7 @@ const VacancyDetail = (props) => {
             salary = "Not mentioned"
         }
 
-        if (salary && salary != "Not mentioned" && currency) {
+        if (salary && salary !== "Not mentioned" && currency) {
             salary = salary + " " + currency.name
         }
 
@@ -111,9 +108,9 @@ const VacancyDetail = (props) => {
     const getExperience = () => {
         if (minExperience > 0 && maxExperience > 0) {
             experienceText = minExperience + "~" + maxExperience + " year"
-        }else if(!minExperience && maxExperience > 0){
+        } else if (!minExperience && maxExperience > 0) {
             experienceText = maxExperience + " year"
-        }else if(minExperience > 0 && !maxExperience){
+        } else if (minExperience > 0 && !maxExperience) {
             experienceText = minExperience + " year"
         }
 

@@ -10,14 +10,10 @@ import 'moment-timezone';
 const VacancyCard = (props) => {
 
     const {
-        id,
-        isVip,
-        status,
         viewsCount,
         isBookmarked,
         createdAt,
         expiredAt,
-        canRequest,
         requested,
         title,
         company,
@@ -63,9 +59,9 @@ const VacancyCard = (props) => {
         let currentDate = new Date()
 
         if(currentDate > expireDate){
-            dateText = <span className="text-danger">Expired: </span>
+            dateText = <span className="text-danger">- Expired: </span>
         }else{
-            dateText = "Expire: "
+            dateText = "- Expire: "
         }
 
         return dateText;
@@ -94,7 +90,7 @@ const VacancyCard = (props) => {
                             </Moment>
                         </span>
                     </li> : null}
-                    {expiredAt ? <li>- {renderDate()}
+                    {expiredAt ? <li>{renderDate()}
                         <span>
                             <Moment format="LL" >
                                 {expiredAt}

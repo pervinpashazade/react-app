@@ -7,9 +7,6 @@ import { Link } from 'react-router-dom'
 
 const Vacancies = (props) => {
     const [loading, setLoading] = useState(false)
-    const [isOpen, setIsOpen] = useState(false)
-
-    const [selectedItem, setSelectedItem] = useState({})
 
     useEffect(() => {
         setLoading(true);
