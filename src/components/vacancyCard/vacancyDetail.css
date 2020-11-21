@@ -64,6 +64,9 @@ ul li{
     color: #2C2760;
 }
 
+ul.requirements li>div{
+    min-width: 50%;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;800;900&display=swap');
 .card {

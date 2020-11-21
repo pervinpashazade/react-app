@@ -5,26 +5,27 @@ import { faBookmark as faBookmark } from '@fortawesome/free-regular-svg-icons'
 import { faBookmark as faBookmarked, faEye } from '@fortawesome/free-solid-svg-icons'
 import Moment from 'react-moment';
 import 'moment-timezone';
-// import 'moment/locale/az';
 
 const VacancyCard = (props) => {
 
-    const {
-        viewsCount,
-        isBookmarked,
-        createdAt,
-        expiredAt,
-        requested,
-        title,
-        company,
-        position,
-        city,
-        currency,
+    const { item } = props;
+    const { 
+        name, 
+        companyName,
         minSalary,
         maxSalary,
+        isBookmarked,
+        position,
         minExperience,
         maxExperience,
-    } = props;
+        createdAt,
+        expiredAt,
+        city,
+        viewsCount,
+        currency,
+        requested
+
+    } = item
 
     let salary = "";
     let experience = ""
@@ -40,7 +41,7 @@ const VacancyCard = (props) => {
         }
 
         if (salary && currency) {
-            salary += " " + currency
+            salary += " " + currency.name
         }
 
         return salary
@@ -70,8 +71,8 @@ const VacancyCard = (props) => {
     return (
         <div className="vacancy-card">
             <div className="header">
-                <h4 className="title">{title}</h4>
-                <p className="company">{company}</p>
+                <h4 className="title">{name}</h4>
+                <p className="company">{companyName}</p>
                 <div className="salary">{getSalary()}</div>
                 <span className="icons">
                     <FontAwesomeIcon className="icon" icon={isBookmarked ? faBookmarked : faBookmark} />
@@ -80,9 +81,9 @@ const VacancyCard = (props) => {
             </div>
             <div className="body">
                 <ul>
-                    <li>- Position: <span>{position}</span></li>
+                    <li>- Position: <span>{position.name}</span></li>
                     {getExperience() ? <li>- Experience: <span>{getExperience()}</span></li> : null}
-                    <li>- City: <span>{city}</span></li>
+                    <li>- City: <span>{city.name}</span></li>
                     {createdAt ? <li>- {"Date: "}
                         <span>
                             <Moment fromNow >

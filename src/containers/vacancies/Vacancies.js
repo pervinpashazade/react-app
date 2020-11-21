@@ -21,28 +21,8 @@ const Vacancies = (props) => {
             value.map((item, index) => {
                 return (
                     <div key={index} className="col-md-6">
-                        <Link to={{ pathname: '/vacancy/'+item.id, vacancyProps: item }}>
-                            <VacancyCard
-                                id={item.id}
-                                isVip={item.isVip}
-                                status={item.status}
-                                viewsCount={item.viewsCount}
-                                isBookmarked={item.bookmarked}
-                                createdAt={item.createdAt}
-                                expiredAt={item.expiredAt}
-                                canRequest={item.canRequest}
-                                requested={item.requested}
-                                title={item.name}
-                                company={item.companyName}
-                                position={item.position.name}
-                                city={item.city.name}
-                                salary={item.salary}
-                                currency={!item.currency ? "" : item.currency.name}
-                                minSalary={item.minSalary}
-                                maxSalary={item.maxSalary}
-                                minExperience={item.minExperience}
-                                maxExperience={item.maxExperience}
-                            />
+                        <Link to={{ pathname: '/vacancy/' + item.id, vacancyProps: item }}>
+                            <VacancyCard item={item} />
                         </Link>
                     </div>
                 )
