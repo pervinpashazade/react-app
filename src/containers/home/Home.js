@@ -9,8 +9,8 @@ export default function Home() {
     const { value } = useContext(UserContext)
 
     return (
-        <div className="row">
-            <div className="col-md-12 mt-4">
+        <div className="row mt-4">
+            <div className="col-md-12">
                 <h3>
                     {value ? value.name + " " + value.surname + ", " : null}
                     Welcome to Home Page!

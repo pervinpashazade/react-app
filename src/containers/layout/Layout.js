@@ -12,7 +12,7 @@ import Cabinet from '../cabinet/Cabinet';
 import { UserContext, VacancyContext } from '../../context/Context.js';
 import Vacancies from '../vacancies/Vacancies.js';
 import axios from 'axios';
-import VacancyCardSkeleton from '../../components/skeletons/VacancyCardSkeleton.js';
+import LoadingSpinner from '../../components/loadingSpinner/LoadingSpinner'
 import VacancyDetail from '../../components/vacancyCard/VacancyDetail.js';
 
 const Layout = () => {
@@ -31,8 +31,8 @@ const Layout = () => {
             .catch(err => console.log("Api Error", err))
 
         if (response && response.data) setVacancies(response.data.data)
-        setLoading(false) 
-        
+        setLoading(false)
+
     }
 
     useEffect(() => {
@@ -48,7 +48,7 @@ const Layout = () => {
                         <Header />
 
                         <div className="container-fluid">
-                            {loading && <VacancyCardSkeleton />}
+                            {loading && <LoadingSpinner />}
                             {!loading &&
                                 <Switch>
                                     <Route path='/' exact component={Home} />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import './vacancyDetail.css'
-import VacancyCardSkeleton from '../skeletons/VacancyCardSkeleton'
+import LoadingSpinner from '../loadingSpinner/LoadingSpinner'
 import Moment from 'react-moment';
 import PropTypes from "prop-types";
 
@@ -143,7 +143,7 @@ const VacancyDetail = (props) => {
 
     return (
         <div className="container">
-            {loading && <VacancyCardSkeleton />}
+            {loading && <LoadingSpinner />}
             {!loading && <div className="row mt-4 bg-white-radius">
                 <div className="col-md-5">
                     <div className="leftside">
