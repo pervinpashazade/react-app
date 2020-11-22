@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import VacancyCardSkeleton from '../../components/skeletons/VacancyCardSkeleton'
+import React from 'react'
 import VacancyCard from '../../components/vacancyCard/VacancyCard'
 import { VacancyContext } from '../../context/Context'
 import './vacancies.css'
 import { Link } from 'react-router-dom'
 
-const Vacancies = (props) => {
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        setLoading(true);
-        const timing = setTimeout(() => {
-            setLoading(false);
-        }, 500);
-        return () => clearTimeout(timing);
-    }, [])
+const Vacancies = () => {
 
     function renderMapItems(value) {
         return (
@@ -35,9 +25,8 @@ const Vacancies = (props) => {
             {(value) => {
                 return (
                     <section>
-                        {loading && <VacancyCardSkeleton />}
                         <div className="row mt-4">
-                            {!loading && renderMapItems(value)}
+                            {renderMapItems(value)}
                         </div>
                     </section>
                 )

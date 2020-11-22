@@ -102,7 +102,7 @@ const VacancyCard = (props) => {
             </div>
             <div className="footer">
                 <div className="views">
-                    <FontAwesomeIcon className="icon" style={requested ? { color: "#888cb7" } : ""} icon={faEye} />
+                    <FontAwesomeIcon className="icon" icon={faEye} />
                     <span>{viewsCount}</span>
                 </div>
                 <div className="read-more">

@@ -4,9 +4,8 @@ import axios from 'axios'
 import './vacancyDetail.css'
 import VacancyCardSkeleton from '../skeletons/VacancyCardSkeleton'
 import Moment from 'react-moment';
-// import 'moment-timezone';
 
-const VacancyDetail = () => {
+const VacancyDetail = (props) => {
 
     const { vacancyId } = useParams()
     const [vacancy, setVacancy] = useState([]);
@@ -52,6 +51,8 @@ const VacancyDetail = () => {
         }
         getData()
     }, [url])
+
+    console.log(props)
 
     let salary = "";
     let dateText = "";
@@ -206,67 +207,7 @@ const VacancyDetail = () => {
                     </div>
                 </div>
             </div>}
-
         </div>
-        // <div className="container ">
-        //     <div className="row mt-4 bg-white">
-        //         <div className="col-md-12">
-
-        //         </div>
-        //     </div>
-        // </div>
-
-        // <div className="card">
-
-        //     <div className="leftSide">
-        //         <label>COURSE</label>
-        //         <h3>JavascriptFundamentals</h3>
-
-        //         <div className="btn"><a>View all chapters</a>
-        //             <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-        //                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9 8.5L1.74631 16L1 15.2283L7.50739 8.5L1 1.77172L1.74631 1L9 8.5Z" fill="white" stroke="#ADA5FF" />
-        //             </svg>
-        //         </div>
-        //     </div>
-
-        //     <div className="rightSide">
-
-        //         <div className="title">
-
-        //             <h5>Chapter 4</h5>
-        //             <h3>Callbacks & Closures</h3>
-        //         </div>
-
-        //         <div className="box">
-
-        //             <div className="progBar">
-        //                 <div className="bar"></div>
-        //             </div>
-        //             <small>6/9 Challenges</small>
-
-        //             <div className="btn">Continue</div>
-        //         </div>
-
-
-
-        //     </div>
-
-        // </div>
-
-        // <div className="container">
-        //     <div className="row mt-4">
-        //         <div className="col-md-12 vacancy-details">
-        //             <div className="header-details">
-        //                 <h3>{state.name}</h3>
-        //                 <h6>{state.companyName}</h6>
-        //                 <p>Vacancy ID #{state.id}</p>
-        //             </div>
-        //             <div className="apply">
-        //                 <button>apply</button>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
     )
 }
 
