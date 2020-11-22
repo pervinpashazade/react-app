@@ -5,12 +5,31 @@ import { faBookmark as faBookmark } from '@fortawesome/free-regular-svg-icons'
 import { faBookmark as faBookmarked, faEye } from '@fortawesome/free-solid-svg-icons'
 import Moment from 'react-moment';
 import 'moment-timezone';
+import PropTypes from "prop-types";
+
 
 const VacancyCard = (props) => {
 
+    //proptypes
+    VacancyCard.propTypes = {
+        name: PropTypes.string,
+        companyName: PropTypes.string,
+        minSalary: PropTypes.number,
+        maxSalary: PropTypes.number,
+        isBookmarked: PropTypes.bool,
+        position: PropTypes.object,
+        minExperience: PropTypes.number,
+        maxExperience: PropTypes.number,
+        createdAt: PropTypes.string,
+        expiredAt: PropTypes.string,
+        city: PropTypes.object,
+        viewsCount: PropTypes.number,
+        currency: PropTypes.object
+    }
+
     const { item } = props;
-    const { 
-        name, 
+    const {
+        name,
         companyName,
         minSalary,
         maxSalary,
@@ -22,9 +41,7 @@ const VacancyCard = (props) => {
         expiredAt,
         city,
         viewsCount,
-        currency,
-        requested
-
+        currency
     } = item
 
     let salary = "";
@@ -59,9 +76,9 @@ const VacancyCard = (props) => {
         let expireDate = new Date(expiredAt)
         let currentDate = new Date()
 
-        if(currentDate > expireDate){
+        if (currentDate > expireDate) {
             dateText = <span className="text-danger">- Expired: </span>
-        }else{
+        } else {
             dateText = "- Expire: "
         }
 

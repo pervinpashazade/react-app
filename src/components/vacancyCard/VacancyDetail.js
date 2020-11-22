@@ -4,6 +4,7 @@ import axios from 'axios'
 import './vacancyDetail.css'
 import VacancyCardSkeleton from '../skeletons/VacancyCardSkeleton'
 import Moment from 'react-moment';
+import PropTypes from "prop-types";
 
 const VacancyDetail = (props) => {
 
@@ -12,6 +13,30 @@ const VacancyDetail = (props) => {
     const [loading, setLoading] = useState(false)
     const url = 'https://devjobscore.prospectsmb.com/v1/vacancies/' + vacancyId;
 
+    //propstypes
+    VacancyDetail.prototypes = {
+        name: PropTypes.string,
+        sector: PropTypes.object,
+        category: PropTypes.object,
+        city: PropTypes.object,
+        companyName: PropTypes.string,
+        position: PropTypes.object,
+        email: PropTypes.string,
+        phoneNumber: PropTypes.string,
+        website: PropTypes.string,
+        workGraphic: PropTypes.object,
+        minSalary: PropTypes.number,
+        maxSalary: PropTypes.number,
+        createdAt: PropTypes.string,
+        expiredAt: PropTypes.string,
+        fromAge: PropTypes.number,
+        toAge: PropTypes.number,
+        education: PropTypes.object,
+        description: PropTypes.string,
+        requirements: PropTypes.string,
+        minExperience: PropTypes.number,
+        maxExperience: PropTypes.number
+    }
 
     const {
         name,
@@ -51,8 +76,6 @@ const VacancyDetail = (props) => {
         }
         getData()
     }, [url])
-
-    console.log(props)
 
     let salary = "";
     let dateText = "";
