@@ -10,14 +10,10 @@ import LoadingSpinner from '../../components/loadingSpinner/LoadingSpinner'
 
 const Vacancies = (props) => {
 
-    console.log(props.vacancies)
-
     useEffect(() => {
-
         if (props.vacancies.length === 0) {
             props.getVacancies()
         }
-
     }, [])
 
     return (
@@ -40,7 +36,6 @@ const Vacancies = (props) => {
 }
 
 const mapStateToProps = state => {
-    // console.log("state", state)
     return {
         vacancies: state.vacancies,
         isLoading: state.isLoading

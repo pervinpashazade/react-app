@@ -6,8 +6,9 @@ import { applyMiddleware, createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { vacancyReducer } from '../../store/reducers/vacancyReducer'
 import thunk from 'redux-thunk'
+import loggerMiddleware from '../../store/middlewares/loggerMiddleware';
 
-const store = createStore(vacancyReducer, applyMiddleware(thunk));
+const store = createStore(vacancyReducer, applyMiddleware(thunk, loggerMiddleware));
 
 function App() {
 

@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 export const getVacancies = (state) => dispatch => {
-    dispatch({type: 'GET_VACANCIES_START'})
+    dispatch({type: 'LOAD_VACANCIES_REQUEST'})
     axios.get('https://devjobscore.prospectsmb.com/v1/vacancies')
-        .then(response => dispatch({ type: 'GET_VACANCIES_SUCCESS', payload: response.data.data }))
-        .catch(error => dispatch({type: 'GET_VACANCIES_ERROR', payload: error}))
+        .then(response => dispatch({ type: 'LOAD_VACANCIES_SUCCESS', payload: response.data.data }))
+        .catch(error => dispatch({type: 'LOAD_VACANCIES_FAILURE', payload: error}))
 }

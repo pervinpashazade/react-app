@@ -6,11 +6,11 @@ const INITIAL_STATE = {
 
 export const vacancyReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case "GET_VACANCIES_START":
+        case "LOAD_VACANCIES_REQUEST":
             return { ...state, isLoading: true, message: '' }
-        case "GET_VACANCIES_SUCCESS":
+        case "LOAD_VACANCIES_SUCCESS":
             return { ...state, vacancies: action.payload, isLoading: false }
-        case "GET_VACANCIES_ERROR":
+        case "GET_VACANCIES_FAILURE":
             return { ...state, message: action.payload, isLoading: false }
         default:
             return state;
