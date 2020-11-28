@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import Aside from './Aside.js'
 import '../../assets/img/profile.png';
 import Header from './Header'
@@ -11,7 +11,7 @@ import registerComponent from '../tasks/registerComponent.js';
 import Cabinet from '../cabinet/Cabinet';
 import { UserContext, VacancyContext } from '../../context/Context.js';
 import Vacancies from '../vacancies/Vacancies.js';
-import axios from 'axios';
+// import axios from 'axios';
 import LoadingSpinner from '../../components/loadingSpinner/LoadingSpinner'
 import VacancyDetail from '../../components/vacancyCard/VacancyDetail.js';
 
@@ -24,20 +24,20 @@ const Layout = () => {
     const vacancyListValue = useMemo(() => ({ vacancies, setVacancies }), [vacancies, setVacancies])
     const [loading, setLoading] = useState(false)
 
-    const getAllVacancies = async () => {
-        setLoading(true);
+    // const getAllVacancies = async () => {
+    //     setLoading(true);
 
-        const response = await axios.get('https://devjobscore.prospectsmb.com/v1/vacancies')
-            .catch(err => console.log("Api Error", err))
+    //     const response = await axios.get('https://devjobscore.prospectsmb.com/v1/vacancies')
+    //         .catch(err => console.log("Api Error", err))
 
-        if (response && response.data) setVacancies(response.data.data)
-        setLoading(false)
+    //     if (response && response.data) setVacancies(response.data.data)
+    //     setLoading(false)
 
-    }
+    // }
 
-    useEffect(() => {
-        getAllVacancies();
-    }, [])
+    // useEffect(() => {
+    //     getAllVacancies();
+    // }, [])
 
     return (
         <Router>
@@ -57,11 +57,11 @@ const Layout = () => {
                                     <Route path='/customcard' component={taskCustomCard} />
                                     <Route path='/clickercard' component={TaskClickerCard} />
                                     <Route path='/components' component={taskComponents} />
-                                    <VacancyContext.Provider value={vacancyListValue.vacancies}>
+                                    {/* <VacancyContext.Provider value={vacancyListValue.vacancies}> */}
                                         <Route path='/task5' component={Vacancies} />
                                         <Route path='/vacancydetail' component={VacancyDetail} />
                                         <Route path='/vacancy/:vacancyId' component={VacancyDetail} />
-                                    </VacancyContext.Provider>
+                                    {/* </VacancyContext.Provider> */}
 
                                     {data ? <Route path='/cabinet' component={Cabinet} /> : (<Redirect to={"/"} />)}
 

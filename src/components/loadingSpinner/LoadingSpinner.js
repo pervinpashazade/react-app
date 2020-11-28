@@ -4,7 +4,7 @@ import './loadingSpinner.css'
 function LoadingSpinner() {
     return (
         <div className="spinner-wrap">
-            <div class="spinner-border text-primary" role="status"></div>
+            <div className="spinner-border text-primary" role="status"></div>
         </div>
     )
 }

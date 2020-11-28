@@ -153,9 +153,7 @@ const VacancyDetail = (props) => {
                             {email ? <li><h6>{email}</h6></li> : null}
                             {phoneNumber ? <li><h6>{phoneNumber}</h6></li> : null}
                             {website ? <li><h6>{website}</h6></li> : null}
-
                         </ul>
-
                         <ul>
                             {position ? <li>
                                 <div>Position:</div>
@@ -202,7 +200,7 @@ const VacancyDetail = (props) => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-7">
                     <div className="rightside">
                         <h5>Requirements</h5>
                         <ul className="requirements">

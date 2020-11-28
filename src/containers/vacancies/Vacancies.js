@@ -1,39 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import VacancyCard from '../../components/vacancyCard/VacancyCard'
-import { VacancyContext } from '../../context/Context'
+// import { VacancyContext } from '../../context/Context'
 import './vacancies.css'
 import { Link } from 'react-router-dom'
 
-const Vacancies = () => {
+import { connect } from 'react-redux'
+import { getVacancies } from '../../store/actions/vacancyActions'
+import LoadingSpinner from '../../components/loadingSpinner/LoadingSpinner'
 
-    function renderMapItems(value) {
-        return (
-            value.map((item, index) => {
-                return (
-                    <div key={index} className="col-md-6">
-                        <Link to={{ pathname: '/vacancy/' + item.id, vacancyProps: item }}>
-                            <VacancyCard item={item} />
-                        </Link>
-                    </div>
-                )
-            })
-        )
-    }
+const Vacancies = (props) => {
+
+    useEffect(() => {
+        props.getVacancies()
+    }, [])
 
     return (
-        <VacancyContext.Consumer>
-            {(value) => {
-                return (
-                    <section>
-                        <div className="row mt-4">
-                            {renderMapItems(value)}
-                        </div>
-                    </section>
-                )
-            }}
 
-        </VacancyContext.Consumer>
+        <section>
+            <div className="row mt-4">
+                {
+                    props.isLoading ? <LoadingSpinner /> : props.vacancies.map((item, index) => {
+                        return (
+                            <div key={index} className="col-md-6">
+                                <Link to={{ pathname: '/vacancy/' + item.id, vacancyProps: item }}>
+                                    <VacancyCard item={item} />
+                                </Link>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </section>
     )
 }
 
-export default Vacancies
+const mapStateToProps = state => {
+    // console.log("state", state)
+    return {
+        vacancies: state.vacancies,
+        isLoading: state.isLoading
+    }
+}
+
+export default connect(mapStateToProps, { getVacancies })(Vacancies);
