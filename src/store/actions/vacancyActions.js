@@ -7,14 +7,14 @@ export const getVacancies = (state) => dispatch => {
         .catch(error => dispatch({ type: LOAD_VACANCIES_FAILURE(), payload: error }))
 }
 
-const LOAD_VACANCIES_REQUEST = () => {
+export const LOAD_VACANCIES_REQUEST = () => {
     return 'LOAD_VACANCIES_REQUEST'
 }
 
-const LOAD_VACANCIES_SUCCESS = () => {
+export const LOAD_VACANCIES_SUCCESS = () => {
     return 'LOAD_VACANCIES_SUCCESS'
 }
 
-const LOAD_VACANCIES_FAILURE = () => {
+export const LOAD_VACANCIES_FAILURE = () => {
     return 'LOAD_VACANCIES_FAILURE'
 }
